@@ -879,7 +879,13 @@ img {
 
 }
 
-.project-content p {
+.project-description-wrapper {
+
+    margin-bottom: 20px;
+
+}
+
+.project-description {
 
     color: var(--paragraph-color);
 
@@ -888,6 +894,140 @@ img {
     line-height: 1.8;
 
     margin-bottom: 20px;
+
+    margin: 0;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+
+    overflow: hidden;
+
+    transition: max-height 0.35s ease;
+
+    /* text-align: justify; */
+
+}
+
+.project-description.expanded {
+
+    display: block;
+
+    -webkit-line-clamp: unset;
+
+    overflow: visible;
+
+}
+
+.description-toggle {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 5px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--main-color);
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+.description-toggle:hover {
+
+    opacity: 0.5;
+
+}
+
+.description-toggle i {
+
+    font-size: 9px;
+
+    transition: transform 0.3s ease;
+
+}
+
+.description-toggle.active i {
+
+    transform: rotate(180deg);
+
+}
+
+.project-features {
+
+    list-style: none;
+    
+    margin: 0 0 22px;
+
+    padding: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+}
+
+.project-features li {
+
+    position: relative;
+
+    padding-left: 18px;
+
+    color: var(--paragraph-color);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    transition: var(--transition);
+
+}
+
+.project-features li::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 9px;
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--main-color);
+
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.35);
+
+}
+
+.project-features li:hover {
+
+    color: var(--main-color);
+
+    transform: translateX(3px);
 
 }
 
@@ -917,7 +1057,7 @@ img {
 
     font-size: 12px;
 
-    font-weight: 500px;
+    font-weight: 500;
 
     transition: var(--transition);
 
@@ -1689,13 +1829,20 @@ footer {
     }
 
     .contact-item {
-        justify-content: center;
+        width: 320px;
+
+        margin: 0 auto 25px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
         text-align: left;
     }
 
     .contact-item > i {
         width: 55px;
         height: 55px;
+        flex-shrink: 0;
     }
 
     .contact-item h4 {
@@ -1835,8 +1982,10 @@ footer {
 }
 
 .contact-item {
-    justify-content: center;
-    text-align: left;
+    width: 100%;
+    max-width: 320px;
+    /* justify-content: center;
+    text-align: left; */
 }
 
 .contact-form button {

@@ -174,3 +174,42 @@ backToTop.addEventListener("click", ()=> {
     });
 
 });
+
+
+
+document.querySelectorAll('.description-toggle').forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        const wrapper = button.closest('.project-description-wrapper');
+
+        const description = wrapper.querySelector('.project-description');
+
+        const isExpanded = description.classList.contains('expanded');
+
+        if (isExpanded) {
+
+            description.classList.remove('expanded');
+
+            button.classList.remove('active');
+
+            button.innerHTML =  `
+            More
+            <i class="fa-solid fa-chevron-down"></i>
+            `;
+        } else {
+
+            description.classList.add('expanded');
+
+            button.classList.add('active');
+
+            button.innerHTML = `
+            Less
+            <i class="fa-solid fa-chevron-down"></i>
+            `;
+
+        }
+
+    });
+
+});
