@@ -116,7 +116,8 @@ const navObserver = new IntersectionObserver((entries) => {
 
 }, {
 
-    threshold: 0.5
+    threshold: 0,
+    rootMargin: "-30% 0px -60% 0px"
 
 });
 
