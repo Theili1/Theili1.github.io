@@ -27,10 +27,26 @@ body {
 
     --main-color: #38bdf8;
 
+    --card-border: rgba(56, 189, 248, 0.12);
+    --bar-bg: #334155;
+
     --text-color: #ffffff;
     --paragraph-color: #94a3b8;
 
     --transition: 0.4s ease;
+}
+
+html.light-mode {
+
+    --bg-color: #f8fafc;
+    --second-bg: #e7e7e7;
+    --main-color: #0284c7;
+    --text-color: #0f172a;
+    --paragraph-color: #475569;
+
+    --card-border: rgba(15, 23, 42, 0.12);
+    --bar-bg: #cbd5e1;
+
 }
 
 
@@ -84,7 +100,7 @@ img {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
-    border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+    border-bottom: 1px solid var(--card-border);
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
 
 }
@@ -196,6 +212,36 @@ img {
     transform: translateY(-3px);
 
     box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+}
+
+.theme-btn {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+
+    background: transparent;
+    color: var(--main-color);
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.theme-btn:hover {
+
+    background: var(--main-color);
+    color: var(--bg-color);
+
+    transform: rotate(20deg);
+
 }
 
 
@@ -440,7 +486,7 @@ img {
 
     border-color: var(--main-color);
 
-    box-shadow: 0 15px 35px rgba(56, 189, 248, 0.12);
+    box-shadow: 0 15px 35px var(--card-border);
 
 }
 
@@ -661,7 +707,7 @@ img {
 
     height: 8px;
 
-    background: #334155;
+    background: var(--bar-bg);
 
     border-radius: 10px;
 
@@ -691,7 +737,7 @@ img {
 
     border-color: var(--main-color);
 
-    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.12);
+    box-shadow: 0 10px 30px var(--card-border);
 
 }
 
@@ -810,7 +856,7 @@ img {
 
     background: var(--second-bg);
 
-    border: 1px solid rgba(56, 189, 248, 0.12);
+    border: 1px solid var(--card-border);
 
     border-radius: 20px;
 
@@ -825,7 +871,7 @@ img {
 
     border-color: var(--main-color);
 
-    box-shadow: 0 15px 40px rgba(56, 189, 248, 0.12);
+    box-shadow: 0 15px 40px var(--card-border);
 
 }
 
@@ -916,6 +962,8 @@ img {
     -webkit-line-clamp: unset;
 
     overflow: visible;
+
+    transition: var(--transition);
 
 }
 
@@ -1380,7 +1428,7 @@ img {
 footer {
 
     background: var(--bg-color);
-    border-top: 1 px solid rgba(56, 189, 248, 0.12);
+    border-top: 1 px solid var(--card-border);
 
 }
 
@@ -1671,6 +1719,13 @@ footer {
         display: none;
         padding: 9px 18px;
         font-size: 14px;
+    }
+
+    .theme-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+        margin-left: 160px;
     }
 
 

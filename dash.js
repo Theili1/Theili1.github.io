@@ -213,3 +213,73 @@ document.querySelectorAll('.description-toggle').forEach(button => {
     });
 
 });
+
+
+
+
+
+
+
+const themeBtn = document.getElementById("themeBtn");
+
+const themeIcon = themeBtn.querySelector("i");
+
+
+function updateThemeIcon () {
+
+    const isLightMode = 
+        document.documentElement.classList.contains("light-mode");
+
+        if (isLightMode) {
+
+            themeIcon.classList.remove("fa-sun");
+            themeIcon.classList.add("fa-moon");
+
+        } else {
+
+            themeIcon.classList.remove("fa-moon");
+            themeIcon.classList.add("fa-sun");
+
+        }
+
+}
+
+updateThemeIcon();
+
+
+// // Load saved theme
+// const savedTheme = localStorage.getItem("theme");
+
+// // Check user's system preference
+// const systemPrefersLight = window.matchMedia(
+//     "(prefers-color-schema: light"
+// ).matches;
+
+
+// // Set initial theme
+// if (savedTheme === "light" || (!savedTheme && systemPrefersLight)) {
+
+//     document.body.classList.add("light-mode");
+
+//     themeIcon.classList.remove("fa-sun");
+//     themeIcon.classList.add("fa-moon");
+
+// }
+
+
+// Toggle theme
+themeBtn.addEventListener("click", () => {
+
+    const isLightMode = document.documentElement.classList.toggle("light-mode");
+
+    if (isLightMode) {
+
+        localStorage.setItem("theme", "light");
+
+    } else {
+
+        localStorage.setItem("theme", "dark");
+
+    }
+    updateThemeIcon();
+});
