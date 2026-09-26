@@ -1,27 +1,27 @@
-const skillsSection = document.querySelector(".skills");
+// const skillsSection = document.querySelector(".skills");
 
-const skillProgress = document.querySelectorAll(".skill-progress");
+// const skillProgress = document.querySelectorAll(".skill-progress");
 
 
-const skillsObserver = new IntersectionObserver((entries) => {
+// const skillsObserver = new IntersectionObserver((entries) => {
 
-    if (entries[0].isIntersecting) {
+//     if (entries[0].isIntersecting) {
 
-        skillProgress.forEach((skill) => {
+//         skillProgress.forEach((skill) => {
 
-            const width = skill.dataset.width;
+//             const width = skill.dataset.width;
 
-            skill.style.width = width;
+//             skill.style.width = width;
 
-        });
+//         });
 
-        skillsObserver.unobserve(skillsSection);
+//         skillsObserver.unobserve(skillsSection);
 
-    }
+//     }
 
-});
+// });
 
-skillsObserver.observe(skillsSection);
+// skillsObserver.observe(skillsSection);
 
 
 const menuBtn = document.getElementById("menuBtn");

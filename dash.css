@@ -645,101 +645,133 @@ img {
 
     width: 100%;
 
-    max-width: 900px;
+    max-width: 1050px;
 
     margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    gap: 30px;
+    gap: 24px;
 
 }
 
-.skill {
+.skill-category {
 
-    padding: 25px 30px;
+    min-width: 0;
+    padding: 30px;
 
     background: var(--bg-color);
-
-    border: 1px solid rgba(56, 189, 248, 0.15);
-
-    border-radius: 15px;
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
 
     transition: var(--transition);
 
 }
 
-.skill-info {
+.skill-category:last-child {
 
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 12px;
+    grid-column: 1 / -1;
 
 }
 
-.skill-info span:first-child {
-
-    font-size: 17px;
-
-    font-weight: 600;
-
-}
-
-.skill-info span:last-child {
-
-    color: var(--main-color);
-
-    font-size: 14px;
-
-    font-weight: 600px;
-
-}
-
-.skill-bar {
-
-    width: 100%;
-
-    height: 8px;
-
-    background: var(--bar-bg);
-
-    border-radius: 10px;
-
-    overflow: hidden;
-
-}
-
-.skill-progress {
-
-    height: 100%;
-
-    background: var(--main-color);
-
-    border-radius: inherit;
-
-    width: 0;
-
-    transition: width 3.5s ease;
-
-}
-
-
-
-.skill:hover {
+.skill-category:hover {
 
     transform: translateY(-5px);
-
     border-color: var(--main-color);
-
-    box-shadow: 0 10px 30px var(--card-border);
+    box-shadow: 0 12px 30px rgba(56, 189, 248, 0.08);
 
 }
+
+.skill-category-icon {
+
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    border-radius: 12px;
+
+    color: var(--main-color);
+    font-size: 20px;
+
+    transition: var(--transition);
+
+}
+
+.skill-category:hover .skill-category-icon {
+
+    transform: scale(1.05);
+
+}
+
+.skill-category-header h3 {
+
+    font-size: 17px;
+    font-weight: 600px;
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+
+}
+
+.skill-category-header span {
+
+    display: block;
+    margin-top: 4px;
+
+    color: var(--paragraph-color);
+    font-size: 12px;
+
+}
+
+.skill-tags {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 5px;
+
+}
+
+.skill-tags span {
+
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 13px;
+
+    background: var(--second-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+
+    color: var(--text-color);
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: var(--transition);
+
+}
+
+.skill-tags span:hover {
+
+    color: var(--main-color);
+    border-color: var(--main-color);
+    transform: translateY(-2px);
+
+}
+
+/* ===============Mobile Menu========================= */
 
 .menu-btn {
 
@@ -1693,6 +1725,18 @@ footer {
 
     }
 
+    .skills {
+        padding: 100px 5%;
+    }
+
+    .skills-container {
+        gap: 20px;
+    }
+
+    .skill-category {
+        padding: 25px;
+    }
+
 }
 
 
@@ -1941,6 +1985,24 @@ footer {
         padding: 18px 5%;
     }
 
+    .skills {
+        min-height: auto;
+        padding: 80px 5%;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .skill-category:last-child {
+        grid-column: auto;
+    }
+
+    .skill-category {
+        padding: 25px;
+    }
+
 }
 
 @media (min-width: 769px) {
@@ -2091,6 +2153,39 @@ footer {
         width: 40px;
         height: 40px;
         font-size: 15px;
+    }
+
+    .skills {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .skill-category {
+        padding: 20px;
+    }
+
+    .skill-category-header {
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .skill-category-header h3 {
+        font-size: 16px;
+    }
+
+    .skill-category-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .skill-tags {
+        gap: 8px;
+    }
+
+    .skill-tags span {
+        padding: 7px 10px;
+        font-size: 12px;
     }
 
 }
