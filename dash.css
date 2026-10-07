@@ -515,6 +515,8 @@ img {
 
     gap: 80px;
 
+    background: var(--second-bg);
+
 }
 
 .about-image {
@@ -627,7 +629,7 @@ img {
 
     padding: 100px 8%;
 
-    background: var(--second-bg);
+    background: var(--bg-color);
 
     display: flex;
     flex-direction: column;
