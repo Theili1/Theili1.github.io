@@ -1215,47 +1215,69 @@ img {
 
 /* ================================Learning and Tutorial ========================= */
 
+/* =========================================================
+   LEARNING & TUTORIALS
+========================================================= */
+
 .learning {
-    position: relative;
     width: 100%;
+    min-height: 100vh;
     padding: 100px 8%;
     background: var(--second-bg);
 }
+
+
+/* =========================================================
+   LEARNING CONTAINER
+========================================================= */
 
 .learning-container {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
 
-    
-
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
 }
 
-.learning-card {
-    position: relative;
-    overflow: hidden;
 
+/* =========================================================
+   LEARNING CARD
+========================================================= */
+
+.learning-card {
     display: flex;
     flex-direction: column;
 
-    background: var(--bg-color);
+    min-width: 0;
 
+    background: var(--bg-color);
     border: 1px solid var(--card-border);
     border-radius: 18px;
 
-    transition: var(--transition);
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
+
 
 .learning-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-7px);
 
-    border-color: var(--card-border);
+    border-color: var(--main-color);
 
-    box-shadow: 0 20px 50px rgba(56, 189, 248, 0.12);
+    box-shadow:
+        0 18px 45px rgba(56, 189, 248, 0.12);
 }
+
+
+/* =========================================================
+   LEARNING IMAGE
+========================================================= */
 
 .learning-image {
     position: relative;
@@ -1265,8 +1287,9 @@ img {
 
     overflow: hidden;
 
-    /* background: var(--main-color); */
+    background: #0f172a;
 }
+
 
 .learning-image img {
     width: 100%;
@@ -1276,36 +1299,46 @@ img {
 
     object-fit: cover;
 
-    transition: var(--transition);
+    transition:
+        transform 0.5s ease;
 }
+
 
 .learning-card:hover .learning-image img {
-    transform: scale(1.01);
+    transform: scale(1.04);
 }
 
-.learning-image::after {
-    content: "";
 
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.learning-overlay {
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(
-        to top,
-        rgba(15,23,42,0.75)
-        transparent 55%
-    );
+    background:
+        linear-gradient(
+            to top,
+            rgba(15, 23, 42, 0.78),
+            rgba(15, 23, 42, 0.05) 65%
+        );
 
     pointer-events: none;
+
+    z-index: 1;
 }
 
+
+/* =========================================================
+   YOUTUBE PLAY BUTTON
+========================================================= */
 
 .learning-play {
     position: absolute;
 
     top: 50%;
-    left: 45%;
-
-    transform: translateY(-50%, -50%);
+    left: 50%;
 
     width: 58px;
     height: 58px;
@@ -1314,36 +1347,50 @@ img {
     align-items: center;
     justify-content: center;
 
+    transform:
+        translate(-50%, -50%);
+
     border-radius: 50%;
 
-    background: rgba(15, 23, 42, 0.8);
+    background:
+        rgba(15, 23, 42, 0.78);
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border:
+        1px solid rgba(255, 255, 255, 0.2);
 
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 
-    color: #38bdf8;
+    color: #ff3b30;
 
     font-size: 23px;
 
     z-index: 2;
 
-    transition: transform 0.3s ease,
-    background 0.3s ease,
-    color 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.learning-play:hover {
-    cursor: pointer;
-}
 
 .learning-card:hover .learning-play {
-    transform: scale(1.1);
+    transform:
+        translate(-50%, -50%)
+        scale(1.1);
 
-    background: rgba(56, 189, 248, 0.15);
+    background:
+        rgba(255, 59, 48, 0.12);
 
-    color: #ffffff;
+    box-shadow:
+        0 0 25px rgba(255, 59, 48, 0.15);
 }
+
+
+/* =========================================================
+   SESSION / CONTENT BADGE
+========================================================= */
 
 .learning-count {
     position: absolute;
@@ -1357,9 +1404,11 @@ img {
 
     border-radius: 8px;
 
-    background: rgba(15, 23, 42, 0.85);
+    background:
+        rgba(15, 23, 42, 0.82);
 
-    border: 1px solid var(--card-border);
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
 
     color: #ffffff;
 
@@ -1367,15 +1416,27 @@ img {
     font-weight: 600;
 
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
+
+
+/* =========================================================
+   LEARNING CONTENT
+========================================================= */
 
 .learning-content {
     display: flex;
     flex-direction: column;
 
-    padding: 25px;
     flex: 1;
+
+    padding: 26px;
 }
+
+
+/* =========================================================
+   COURSE / TUTORIAL LABEL
+========================================================= */
 
 .learning-type {
     display: inline-flex;
@@ -1383,13 +1444,16 @@ img {
 
     width: fit-content;
 
-    margin-bottom: 10px;
-
+    margin-bottom: 11px;
     padding: 5px 10px;
 
     border-radius: 6px;
 
-    background: rgba(56, 189, 248, 0.08);
+    background:
+        rgba(56, 189, 248, 0.08);
+
+    border:
+        1px solid rgba(56, 189, 248, 0.12);
 
     color: var(--main-color);
 
@@ -1397,8 +1461,13 @@ img {
     font-weight: 700;
 
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
 }
+
+
+/* =========================================================
+   TITLE
+========================================================= */
 
 .learning-content h3 {
     margin: 0 0 12px;
@@ -1408,11 +1477,25 @@ img {
     font-size: 22px;
     font-weight: 700;
 
-    line-height: 1.3;
+    line-height: 1.35;
+
+    transition:
+        color 0.3s ease;
 }
+
+
+.learning-card:hover .learning-content h3 {
+    color: var(--main-color);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
 .learning-content p {
     margin: 0 0 20px;
+
     color: var(--paragraph-color);
 
     font-size: 14px;
@@ -1420,14 +1503,20 @@ img {
     line-height: 1.8;
 }
 
+
+/* =========================================================
+   LEARNING INFORMATION
+========================================================= */
+
 .learning-info {
     display: flex;
     flex-wrap: wrap;
-    
+
     gap: 16px;
 
     margin-bottom: 18px;
 }
+
 
 .learning-info span {
     display: inline-flex;
@@ -1435,10 +1524,12 @@ img {
 
     gap: 7px;
 
-    color: var(--text-color);
-    
+    color: var(--paragraph-color);
+
     font-size: 12px;
+    font-weight: 500;
 }
+
 
 .learning-info i {
     color: var(--main-color);
@@ -1446,13 +1537,20 @@ img {
     font-size: 13px;
 }
 
+
+/* =========================================================
+   TECHNOLOGY TAGS
+========================================================= */
+
 .learning-tags {
     display: flex;
     flex-wrap: wrap;
+
     gap: 8px;
 
     margin-bottom: 25px;
 }
+
 
 .learning-tags span {
     display: inline-flex;
@@ -1464,28 +1562,48 @@ img {
 
     border-radius: 7px;
 
-    background: rgba(148, 163, 184, 0.08);
-    
-    border: 1px solid rgba(148, 163, 184, 0.1);
+    background:
+        rgba(148, 163, 184, 0.08);
 
-    color: var(--main-color);
+    border:
+        1px solid rgba(148, 163, 184, 0.12);
+
+    color: var(--paragraph-color);
 
     font-size: 11px;
+    font-weight: 500;
 
-    transition: 
-    background 0.3s ease, 
-    border-color 0.3s ease,
-    color 0.3s ease;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
+
+
+.learning-tags span i {
+    color: var(--main-color);
+}
+
 
 .learning-tags span:hover {
-     background: rgba(56, 189, 248, 0.1);
+    background:
+        rgba(56, 189, 248, 0.08);
 
-     border-color: rgba(56, 189, 248, 0.25);
+    border-color:
+        rgba(56, 189, 248, 0.3);
 
-     color: #38bdf8;
+    color:
+        var(--main-color);
+
+    transform:
+        translateY(-2px);
 }
 
+
+/* =========================================================
+   MAIN BUTTON
+========================================================= */
 
 .learning-btn {
     display: inline-flex;
@@ -1502,14 +1620,14 @@ img {
 
     border-radius: 9px;
 
-    background: #38bdf8;
+    background:
+        var(--main-color);
 
-    color: #0f172a;
+    color:
+        var(--bg-color);
 
     font-size: 13px;
     font-weight: 700;
-
-    text-decoration: none;
 
     transition:
         transform 0.3s ease,
@@ -1519,19 +1637,31 @@ img {
 
 
 .learning-btn:hover {
-    transform: translateY(-2px);
-
-    background: #7dd3fc;
+    transform:
+        translateY(-2px);
 
     box-shadow:
-        0 8px 25px rgba(56, 189, 248, 0.2);
+        0 8px 25px rgba(56, 189, 248, 0.22);
 }
 
 
 .learning-btn i {
     font-size: 11px;
+
+    transition:
+        transform 0.3s ease;
 }
 
+
+.learning-btn:hover i {
+    transform:
+        translateX(3px);
+}
+
+
+/* =========================================================
+   YOUTUBE CTA
+========================================================= */
 
 .learning-cta {
     width: 100%;
@@ -1546,14 +1676,32 @@ img {
 
     gap: 20px;
 
-    background: var(--bg-color);
+    background:
+        var(--bg-color);
 
-    border: 1px solid rgba(56, 189, 248, 0.12);
+    border:
+        1px solid var(--card-border);
 
     border-radius: 18px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
+.learning-cta:hover {
+    border-color:
+        rgba(56, 189, 248, 0.3);
+
+    box-shadow:
+        0 12px 35px rgba(56, 189, 248, 0.07);
+}
+
+
+/* =========================================================
+   CTA ICON
+========================================================= */
 
 .learning-cta-icon {
     width: 55px;
@@ -1567,13 +1715,22 @@ img {
 
     border-radius: 14px;
 
-    background: rgba(56, 189, 248, 0.1);
+    background:
+        rgba(255, 59, 48, 0.08);
 
-    color: #38bdf8;
+    border:
+        1px solid rgba(255, 59, 48, 0.12);
+
+    color:
+        #ff3b30;
 
     font-size: 24px;
 }
 
+
+/* =========================================================
+   CTA CONTENT
+========================================================= */
 
 .learning-cta-content {
     flex: 1;
@@ -1583,7 +1740,8 @@ img {
 .learning-cta-content h3 {
     margin: 0 0 5px;
 
-    color: var(--text-color);
+    color:
+        var(--text-color);
 
     font-size: 18px;
 }
@@ -1592,7 +1750,8 @@ img {
 .learning-cta-content p {
     margin: 0;
 
-    color: var(--paragraph-color);
+    color:
+        var(--paragraph-color);
 
     font-size: 13px;
 
@@ -1600,6 +1759,9 @@ img {
 }
 
 
+/* =========================================================
+   CTA BUTTON
+========================================================= */
 
 .learning-cta-btn {
     display: inline-flex;
@@ -1608,63 +1770,84 @@ img {
 
     gap: 8px;
 
-    padding: 11px 17px;
-
     flex-shrink: 0;
+
+    padding: 11px 17px;
 
     border-radius: 9px;
 
-    background: transparent;
+    background:
+        transparent;
 
-    border: 1px solid rgba(56, 189, 248, 0.35);
+    border:
+        1px solid rgba(56, 189, 248, 0.35);
 
-    color: var(--main-color);
+    color:
+        var(--main-color);
 
     font-size: 13px;
     font-weight: 600;
 
-    text-decoration: none;
-
     transition:
         background 0.3s ease,
         color 0.3s ease,
-        transform 0.3s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
 .learning-cta-btn:hover {
-    background: var(--main-color);
+    background:
+        var(--main-color);
 
-    color: #0f172a;
+    color:
+        var(--bg-color);
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(56, 189, 248, 0.18);
 }
 
 
 /* =========================================================
-   TABLET
-   ========================================================= */
+   RESPONSIVE — TABLET
+========================================================= */
 
 @media (max-width: 850px) {
+
+    .learning {
+        padding: 100px 5%;
+    }
 
     .learning-container {
         grid-template-columns: 1fr;
 
         max-width: 650px;
+
+        gap: 25px;
     }
 
     .learning-cta {
         max-width: 650px;
     }
-
 }
 
 
 /* =========================================================
-   MOBILE
-   ========================================================= */
+   RESPONSIVE — MOBILE
+========================================================= */
 
 @media (max-width: 600px) {
+
+    .learning {
+        min-height: auto;
+
+        padding:
+            80px 5%;
+    }
+
 
     .learning-container {
         gap: 20px;
@@ -1672,7 +1855,7 @@ img {
 
 
     .learning-content {
-        padding: 20px;
+        padding: 21px;
     }
 
 
@@ -1683,6 +1866,8 @@ img {
 
     .learning-content p {
         font-size: 13px;
+
+        line-height: 1.75;
     }
 
 
@@ -1690,6 +1875,17 @@ img {
         gap: 10px;
 
         flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .learning-tags {
+        margin-bottom: 22px;
+    }
+
+
+    .learning-btn {
+        width: 100%;
     }
 
 
@@ -1712,10 +1908,77 @@ img {
     }
 
 
+    .learning-cta-content h3 {
+        font-size: 17px;
+    }
+
+
+    .learning-cta-content p {
+        font-size: 12px;
+    }
+
+
     .learning-cta-btn {
         width: 100%;
     }
+}
 
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .learning {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+
+    .learning-content {
+        padding: 20px;
+    }
+
+
+    .learning-content h3 {
+        font-size: 18px;
+    }
+
+
+    .learning-play {
+        width: 52px;
+        height: 52px;
+
+        font-size: 21px;
+    }
+
+
+    .learning-count {
+        right: 12px;
+        bottom: 12px;
+
+        padding: 5px 9px;
+
+        font-size: 11px;
+    }
+
+
+    .learning-type {
+        font-size: 10px;
+    }
+
+
+    .learning-tags span {
+        padding: 6px 9px;
+
+        font-size: 10px;
+    }
+
+
+    .learning-cta {
+        padding: 20px;
+    }
 }
 
 
