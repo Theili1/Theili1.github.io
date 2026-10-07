@@ -1994,7 +1994,7 @@ img {
 
     padding: 100px 8%;
 
-    background: var(--bg-color);
+    background: var(--second-bg);
 
 }
 
@@ -2230,7 +2230,7 @@ img {
 
 footer {
 
-    background: var(--second-bg);
+    background: var(--bg-color);
     border-top: 1 px solid var(--card-border);
 
 }
