@@ -515,7 +515,7 @@ img {
 
     gap: 80px;
 
-    background: var(--bg-color);
+    background: var(--second-bg);
 
 }
 
@@ -860,7 +860,7 @@ img {
 
     padding: 100px 8%;
 
-    background: var(--bg-color);
+    background: var(--second-bg);
 
 }
 
@@ -888,7 +888,7 @@ img {
 
 .project-card {
 
-    background: var(--second-bg);
+    background: var(--bg-color);
 
     border: 1px solid var(--card-border);
 
@@ -1225,7 +1225,7 @@ img {
     width: 100%;
     min-height: 100vh;
     padding: 100px 8%;
-    background: var(--second-bg);
+    background: var(--bg-color);
 }
 
 
@@ -1254,7 +1254,7 @@ img {
 
     min-width: 0;
 
-    background: var(--bg-color);
+    background: var(--second-bg);
     border: 1px solid var(--card-border);
     border-radius: 18px;
 
@@ -1994,7 +1994,7 @@ img {
 
     padding: 100px 8%;
 
-    background: var(--second-bg);
+    background: var(--bg-color);
 
 }
 
@@ -2230,7 +2230,7 @@ img {
 
 footer {
 
-    background: var(--bg-color);
+    background: var(--second-bg);
     border-top: 1 px solid var(--card-border);
 
 }
